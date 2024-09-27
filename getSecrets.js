@@ -18,11 +18,13 @@ const load_config = async () => {
     CONFIG = JSON.parse(payload);
     console.log("CONFIG", CONFIG);
     // CONFIG = () => CONFIG
+    module.exports = { CONFIG };
+
   } catch (error) {
     console.error("Error accessing secret version:", error);
     console.log("TAKING LOCAL RESOURCE");
     CONFIG = process.env;
-    // module.exports = { CONFIG };
+    module.exports = { CONFIG };
   }
 };
-module.exports = { CONFIG, load_config };
+module.exports = { load_config };
