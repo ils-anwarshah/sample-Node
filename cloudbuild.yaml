@@ -22,8 +22,8 @@ steps:
       - 'us-central1'  # Replace with your desired region
       - '--port'
       - '3000' # Replace with your desired region
-      # - '--set-env-vars'
-      # - 'SECRET_VERSION_NAME=projects/714859248413/secrets/harsh/versions/1'
+      - '--set-env-vars'
+      - 'SECRET_NAME=projects/714859248413/secrets/alphasecret/versions/1'
       - '--allow-unauthenticated'
 
 # Substitutions for variables, if needed
