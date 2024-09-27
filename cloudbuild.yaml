@@ -1,11 +1,11 @@
 steps:
   # Step 1: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/gcp-training-710/gcf-artifacts/Atest', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/gcp-training-710/gcf-artifacts/alphatest', '.']
 
   # Step 2: Push the Docker image to Google Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/gcp-training-710/gcf-artifacts/Atest']
+    args: ['push', 'us-central1-docker.pkg.dev/gcp-training-710/gcf-artifacts/alphatest']
 
   # Step 3: Deploy the image to Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -13,9 +13,9 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'AtestServer'  # Replace with your Cloud Run service name
+      - 'alphatestserver'  # Replace with your Cloud Run service name
       - '--image'
-      - 'us-central1-docker.pkg.dev/gcp-training-710/gcf-artifacts/Atest'
+      - 'us-central1-docker.pkg.dev/gcp-training-710/gcf-artifacts/alphatest'
       - '--platform'
       - 'managed'
       - '--region'
@@ -36,4 +36,4 @@ options:
   logging: CLOUD_LOGGING_ONLY
   
 images:
-  - 'us-central1-docker.pkg.dev/gcp-training-710/gcf-artifacts/Atest'
+  - 'us-central1-docker.pkg.dev/gcp-training-710/gcf-artifacts/alphatest'
