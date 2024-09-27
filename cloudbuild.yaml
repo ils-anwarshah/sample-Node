@@ -23,7 +23,7 @@ steps:
       - '--port'
       - '3000' # Replace with your desired region
       - '--set-env-vars'
-      - 'SECRET_NAME=projects/714859248413/secrets/alphasecret/versions/1'
+      - 'SECRET_NAME=projects/714859248413/secrets/alphasecret/versions/latest'
       - '--allow-unauthenticated'
 
 # Substitutions for variables, if needed
